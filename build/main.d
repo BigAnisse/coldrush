@@ -54,7 +54,8 @@ main.o: C:/coldrushswitch/source/main.c C:/coldrushswitch/source/main.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_mixer.h \
  C:/coldrushswitch/source/common.h C:/coldrushswitch/source/input.h \
  C:/coldrushswitch/source/graphics.h C:/coldrushswitch/source/audio.h \
- C:/coldrushswitch/source/vibration.h
+ C:/coldrushswitch/source/vibration.h \
+ C:/coldrushswitch/source/character.h
 C:/coldrushswitch/source/main.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_main.h:
@@ -114,3 +115,4 @@ C:/coldrushswitch/source/input.h:
 C:/coldrushswitch/source/graphics.h:
 C:/coldrushswitch/source/audio.h:
 C:/coldrushswitch/source/vibration.h:
+C:/coldrushswitch/source/character.h:

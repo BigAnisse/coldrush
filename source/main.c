@@ -24,6 +24,9 @@ int main(int argc, char** argv) {
     // Création du personnage
     Character character = {0};
     
+    // Création de la carte de collision
+    CollisionMap collisionMap = {0};
+    
     // Initialiser les sous-systèmes
     initializeInput(&pad);
     if (!initializeGraphics(&gameState)) {
@@ -47,6 +50,12 @@ int main(int argc, char** argv) {
         // On continue même si l'initialisation du personnage échoue
     }
     
+    // Initialiser la carte de collision
+    if (!initializeCollisionMap(&collisionMap)) {
+        printf("Erreur d'initialisation de la carte de collision\n");
+        // On continue même si l'initialisation de la carte échoue
+    }
+    
     // Ouvrir le joystick
     gameState.joystick = SDL_JoystickOpen(0);
     
@@ -59,10 +68,13 @@ int main(int argc, char** argv) {
         updateVibration();
         
         // Mettre à jour le personnage
-        updateCharacter(&gameState, &character, &pad);
+        updateCharacter(&gameState, &character, &pad, &collisionMap);
         
         // Afficher le contenu
         renderFrame(&gameState);
+        
+        // Afficher la carte de collision (pour déboguer)
+        renderCollisionMap(&gameState, &collisionMap);
         
         // Afficher le personnage
         renderCharacter(&gameState, &character);
@@ -84,6 +96,7 @@ cleanup:
     cleanupVibration();
     cleanupInput(gameState.joystick);
     cleanupCharacter(&character);
+    cleanupCollisionMap(&collisionMap);
     
     // Fermeture de romfs
     romfsExit();
