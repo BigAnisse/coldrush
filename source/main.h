@@ -14,6 +14,7 @@
 #include "graphics.h"
 #include "audio.h"
 #include "vibration.h"
+#include "character.h" // Nouvel include
 
 // Fonction principale
 int main(int argc, char** argv);

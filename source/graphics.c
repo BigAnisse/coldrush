@@ -62,8 +62,7 @@ void renderFrame(GameState* gameState) {
         SDL_RenderCopy(gameState->renderer, gameState->textures[gameState->currentPage], NULL, &dst);
     }
     
-    // Présenter le rendu
-    SDL_RenderPresent(gameState->renderer);
+  
 }
 
 void cleanupGraphics(GameState* gameState) {

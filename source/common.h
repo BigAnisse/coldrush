@@ -44,5 +44,16 @@ typedef struct {
     int currentPage;
     int running;
 } GameState;
+// Ajouter à common.h après la déclaration de GameState
+
+// Structure pour représenter le personnage
+typedef struct {
+    float x;                // Position X
+    float y;                // Position Y
+    float speed;            // Vitesse de déplacement
+    int width;              // Largeur
+    int height;             // Hauteur
+    SDL_Texture* texture;   // Texture du personnage
+} Character;
 
 #endif // COMMON_H

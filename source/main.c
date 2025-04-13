@@ -21,6 +21,9 @@ int main(int argc, char** argv) {
     PadState pad;
     u64 kDown;
     
+    // Création du personnage
+    Character character = {0};
+    
     // Initialiser les sous-systèmes
     initializeInput(&pad);
     if (!initializeGraphics(&gameState)) {
@@ -38,6 +41,12 @@ int main(int argc, char** argv) {
         // On continue même si la vibration échoue
     }
     
+    // Initialiser le personnage
+    if (!initializeCharacter(&gameState, &character)) {
+        printf("Erreur d'initialisation du personnage\n");
+        // On continue même si l'initialisation du personnage échoue
+    }
+    
     // Ouvrir le joystick
     gameState.joystick = SDL_JoystickOpen(0);
     
@@ -49,8 +58,17 @@ int main(int argc, char** argv) {
         // Mettre à jour les vibrations
         updateVibration();
         
+        // Mettre à jour le personnage
+        updateCharacter(&gameState, &character, &pad);
+        
         // Afficher le contenu
         renderFrame(&gameState);
+        
+        // Afficher le personnage
+        renderCharacter(&gameState, &character);
+        
+        // Présenter le rendu mis à jour
+        SDL_RenderPresent(gameState.renderer);
         
         // Limiter le frame rate
         SDL_Delay(16); // ~60 FPS
@@ -65,6 +83,7 @@ cleanup:
     cleanupAudio();
     cleanupVibration();
     cleanupInput(gameState.joystick);
+    cleanupCharacter(&character);
     
     // Fermeture de romfs
     romfsExit();
