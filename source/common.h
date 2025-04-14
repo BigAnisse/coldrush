@@ -1,4 +1,6 @@
 // Ajouter après les définitions existantes
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_render.h>
 
 // Constantes pour l'animation
 #define ANIMATION_FRAMES 25       // Nombre d'images par animation

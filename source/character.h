@@ -1,8 +1,9 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
-
-#include <SDL.h>
 #include "common.h"
+#include <SDL_image.h>
+#include <SDL.h>
+
 
 // Fonctions de gestion du personnage
 int initializeCharacter(GameState* gameState, Character* character);

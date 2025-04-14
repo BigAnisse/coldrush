@@ -1,6 +1,5 @@
 #include "character.h"
-#include <SDL_image.h>
-#include <common.h>
+
 
 // Noms des fichiers d'images pour chaque direction et frame
 const char* characterFiles[5][ANIMATION_FRAMES] = {
