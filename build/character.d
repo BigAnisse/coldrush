@@ -1,5 +1,5 @@
 character.o: C:/coldrushswitch/source/character.c \
- C:/coldrushswitch/source/character.h \
+ C:/coldrushswitch/source/character.h C:/coldrushswitch/source/common.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_main.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_stdinc.h \
@@ -50,11 +50,12 @@ character.o: C:/coldrushswitch/source/character.c \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_version.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_locale.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_misc.h \
- C:/coldrushswitch/source/common.h \
+ C:/devkitPro/portlibs/switch/include/SDL2/SDL_render.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_image.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL.h \
- C:/devkitPro/portlibs/switch/include/SDL2/SDL_mixer.h
+ C:/devkitPro/portlibs/switch/include/SDL2/SDL.h
 C:/coldrushswitch/source/character.h:
+C:/coldrushswitch/source/common.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_main.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_stdinc.h:
@@ -105,7 +106,7 @@ C:/devkitPro/portlibs/switch/include/SDL2/SDL_timer.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_version.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_locale.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_misc.h:
-C:/coldrushswitch/source/common.h:
+C:/devkitPro/portlibs/switch/include/SDL2/SDL_render.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_image.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL.h:
-C:/devkitPro/portlibs/switch/include/SDL2/SDL_mixer.h:
+C:/devkitPro/portlibs/switch/include/SDL2/SDL.h:

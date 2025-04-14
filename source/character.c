@@ -1,4 +1,5 @@
 #include "character.h"
+#include "common.h"
 
 
 // Noms des fichiers d'images pour chaque direction et frame
