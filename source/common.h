@@ -30,6 +30,8 @@ typedef struct {
     int frame;                       // Frame d'animation actuelle
     int frameCounter;                // Compteur pour gérer la vitesse d'animation
     SDL_Texture* textures[4][ANIMATION_FRAMES]; // Textures pour chaque direction et frame
+    SDL_Texture* texturesGlac[2][ANIMATION_FRAMESGLA];
+
 } Character;
 
 // Structure pour une carte avec collisions
