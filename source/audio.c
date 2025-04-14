@@ -16,7 +16,7 @@ int initializeAudio() {
     Mix_AllocateChannels(8);
     
     // Charger la musique de fond
-    music = Mix_LoadMUS("data/background.ogg");
+    music = Mix_LoadMUS("data/MUSIQUE_COLD_RUSH.ogg");
     if (music) {
         Mix_PlayMusic(music, -1); // Jouer en boucle
         printf("Musique de fond chargée et démarrée.\n");
