@@ -5,17 +5,63 @@
 const char* characterFiles[4][ANIMATION_FRAMES] = {
     // Direction bas (DIR_DOWN)
     {
-        "data/character_down_1.png",
-        "data/character_down_2.png",
-        "data/character_down_3.png",
-        "data/character_down_4.png"
+        "data/TOMATE_Profil_D_00000.png",
+        "data/TOMATE_Profil_D_00001.png",
+        "data/TOMATE_Profil_D_00002.png",
+        "data/TOMATE_Profil_D_00003.png",
+        "data/TOMATE_Profil_D_00004.png",
+        "data/TOMATE_Profil_D_00005.png",
+        "data/TOMATE_Profil_D_00006.png",
+        "data/TOMATE_Profil_D_00007.png",
+        "data/TOMATE_Profil_D_00008.png",
+        "data/TOMATE_Profil_D_00009.png",
+        "data/TOMATE_Profil_D_00010.png",
+        "data/TOMATE_Profil_D_00011.png",
+        "data/TOMATE_Profil_D_00012.png",
+        "data/TOMATE_Profil_D_00013.png",
+        "data/TOMATE_Profil_D_00014.png",
+        "data/TOMATE_Profil_D_00015.png",
+        "data/TOMATE_Profil_D_00016.png",
+        "data/TOMATE_Profil_D_00017.png",
+        "data/TOMATE_Profil_D_00018.png",
+        "data/TOMATE_Profil_D_00019.png",
+        "data/TOMATE_Profil_D_00020.png",
+        "data/TOMATE_Profil_D_00021.png",
+        "data/TOMATE_Profil_D_00022.png",
+        "data/TOMATE_Profil_D_00023.png",
+        "data/TOMATE_Profil_D_00024.png",
+
+        
     },
     // Direction gauche (DIR_LEFT)
     {
-        "data/character_left_1.png",
-        "data/character_left_2.png",
-        "data/character_left_3.png",
-        "data/character_left_4.png"
+        "data/TOMATE_Profil_00000.png",
+        "data/TOMATE_Profil_00001.png",
+        "data/TOMATE_Profil_00002.png",
+        "data/TOMATE_Profil_00003.png",
+        "data/TOMATE_Profil_00004.png",
+        "data/TOMATE_Profil_00005.png",
+        "data/TOMATE_Profil_00006.png",
+        "data/TOMATE_Profil_00007.png",
+        "data/TOMATE_Profil_00008.png",
+        "data/TOMATE_Profil_00009.png",
+        "data/TOMATE_Profil_00010.png",
+        "data/TOMATE_Profil_00011.png",
+        "data/TOMATE_Profil_00012.png",
+        "data/TOMATE_Profil_00013.png",
+        "data/TOMATE_Profil_00014.png",
+        "data/TOMATE_Profil_00015.png",
+        "data/TOMATE_Profil_00016.png",
+        "data/TOMATE_Profil_00017.png",
+        "data/TOMATE_Profil_00018.png",
+        "data/TOMATE_Profil_00019.png",
+        "data/TOMATE_Profil_00020.png",
+        "data/TOMATE_Profil_00021.png",
+        "data/TOMATE_Profil_00022.png",
+        "data/TOMATE_Profil_00023.png",
+        "data/TOMATE_Profil_00024.png"
+        
+       
     },
     // Direction droite (DIR_RIGHT)
     {
