@@ -2,6 +2,7 @@
 
 // Constantes pour l'animation
 #define ANIMATION_FRAMES 25       // Nombre d'images par animation
+#define ANIMATION_FRAMESGLA 50
 #define ANIMATION_SPEED 8        // Vitesse de l'animation (plus petit = plus rapide)
 
 // Constantes pour les directions

@@ -124,7 +124,7 @@ const char* characterFiles[5][ANIMATION_FRAMES] = {
     }
    
 };
-const char* characterMouv[5][ANIMATION_FRAMES] = {
+const char* characterMouv[5][ANIMATION_FRAMESGLAC] = {
    
        //depose glacon droit
     {
