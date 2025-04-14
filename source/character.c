@@ -1,5 +1,6 @@
 #include "character.h"
 #include <SDL_image.h>
+#include <common.h>
 
 // Noms des fichiers d'images pour chaque direction et frame
 const char* characterFiles[5][ANIMATION_FRAMES] = {
@@ -124,7 +125,7 @@ const char* characterFiles[5][ANIMATION_FRAMES] = {
     }
    
 };
-const char* characterMouv[5][ANIMATION_FRAMESGLAC] = {
+const char* characterMouv[4][ANIMATION_FRAMESGLA] = {
    
        //depose glacon droit
     {
