@@ -28,12 +28,18 @@
 #define PAGE_CONTENU 1
 #define PAGE_EXOLICATION 2
 #define PAGE_PLTO1 3
-#define MAX_IMAGES 9
+#define MAX_IMAGES 14
 #define PAGE_INTERRO 4
 #define PAGE_VOLUME 5
 #define PAGE_ACCEUILGROS 6
 #define PAGE_CONTENUGROS 7
 #define PAGE_INTERROGROS 8
+#define PAGE_CROIXEXPL 9
+#define PAGE_JOUEREXPL 10
+#define PAGE_CROIXEXPLGROS 11
+#define PAGE_JOUEREXPLGROS 12
+#define PAGE_PLTO2 13
+
 
 
 // Constantes pour la vibration

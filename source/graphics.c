@@ -39,7 +39,15 @@ int initializeGraphics(GameState* gameState) {
         "data/volume.png",
          "data/acceuilgros.png",
          "data/homegros.png",
-         "data/interrogros.png"
+         "data/interrogros.png",
+         "data/croixexplication.png",
+         "data/jouerexplication.png",
+         "data/croixexplicationgros.png",
+         "data/jouerexplicationgros.png",
+         "data/plto2.png"
+
+         
+         
 
 
 

@@ -4,11 +4,11 @@
 
 int initializeCharacter(GameState* gameState, Character* character) {
     // Initialiser les propriétés du personnage
-    character->x = SCREEN_W / 2;  // Positionner au centre de l'écran
-    character->y = SCREEN_H / 2;
+    character->x = 70;  // Positionner au centre de l'écran
+    character->y =670;
     character->speed = 5.0f;      // Vitesse de déplacement
-    character->width = 64;        // Taille du personnage (à ajuster)
-    character->height = 64;
+    character->width = 80;        // Taille du personnage (à ajuster)
+    character->height = 90;
     
     // Charger la texture du personnage
     SDL_Surface* surface = IMG_Load("data/character.png");
@@ -30,7 +30,7 @@ int initializeCharacter(GameState* gameState, Character* character) {
 
 void updateCharacter(GameState* gameState, Character* character, PadState* pad) {
     // Cette fonction ne s'exécute que sur la page MAP (page 2)
-    if (gameState->currentPage != PAGE_PLTO1) {
+    if (gameState->currentPage != PAGE_PLTO1 && gameState->currentPage != PAGE_PLTO2) {
         return;
     }
     
@@ -70,9 +70,10 @@ void updateCharacter(GameState* gameState, Character* character, PadState* pad) 
 
 void renderCharacter(GameState* gameState, Character* character) {
     // Afficher le personnage uniquement sur la page MAP
-    if (gameState->currentPage != PAGE_PLTO1) {
+    if (gameState->currentPage != PAGE_PLTO1 && gameState->currentPage != PAGE_PLTO2) {
         return;
     }
+    
     
     // Créer le rectangle de destination pour le personnage
     SDL_Rect dst = {
@@ -84,6 +85,15 @@ void renderCharacter(GameState* gameState, Character* character) {
     
     // Afficher le personnage
     SDL_RenderCopy(gameState->renderer, character->texture, NULL, &dst);
+}
+void choisirMap(GameState* gameState, Character* character){
+     
+    if(gameState->currentPage == PAGE_PLTO1 && character->y < 10 ){
+        gameState->currentPage = PAGE_PLTO2;
+        character->y = 670;
+        
+    }
+
 }
 
 void cleanupCharacter(Character* character) {

@@ -68,6 +68,8 @@ int main(int argc, char** argv) {
         
         // Afficher le personnage
         renderCharacter(&gameState, &character);
+
+        choisirMap(&gameState, &character);
         
         // Présenter le rendu mis à jour
         SDL_RenderPresent(gameState.renderer);

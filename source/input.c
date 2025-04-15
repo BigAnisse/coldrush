@@ -26,7 +26,7 @@ static int stickWasDown = 0;
     *kDown = padGetButtonsDown(pad);
     *kUp = padGetButtonsUp(pad);
     HidAnalogStickState analog_stick_2 = padGetStickPos(pad, 0);
-    const int deadzone2 = 8000;
+    const int deadzone2 = 15000;
     // Traitement des événements SDL
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
@@ -64,7 +64,13 @@ if (!stickWasLeft && (analog_stick_2.x < -deadzone2 || *kDown & HidNpadButton_Le
 if (!stickWasUp && (analog_stick_2.y > deadzone2 || *kDown & HidNpadButton_Up )) {
     if (gameState->currentPage == PAGE_ACCUEIL) {
         gameState->currentPage = PAGE_VOLUME;
-    } 
+    } else  if (gameState->currentPage == PAGE_JOUEREXPL) {
+        gameState->currentPage = PAGE_CROIXEXPL;
+    }  
+
+   
+
+
 }
 
 
@@ -74,7 +80,13 @@ if(!stickWasDown && (analog_stick_2.y < -deadzone2 || *kDown & HidNpadButton_Dow
 
     if (gameState->currentPage == PAGE_VOLUME || gameState->currentPage == PAGE_CONTENU  || gameState->currentPage == PAGE_INTERRO ) {
         gameState->currentPage = PAGE_ACCUEIL;
+    } else if (gameState->currentPage == PAGE_CROIXEXPL) {
+        gameState->currentPage = PAGE_JOUEREXPL;
     } 
+
+
+
+
 
 
 }
@@ -105,6 +117,18 @@ if (*kDown & HidNpadButton_A) {
         printf("Navigation vers la page de contenu\n");
     
 
+    }else if  (gameState->currentPage == PAGE_CROIXEXPL) {
+        playButtonSound();
+        gameState->currentPage = PAGE_CROIXEXPLGROS;
+        printf("Navigation vers la page de contenu\n");
+    
+
+    }else if  (gameState->currentPage == PAGE_JOUEREXPL) {
+        playButtonSound();
+        gameState->currentPage = PAGE_JOUEREXPLGROS;
+        printf("Navigation vers la page de contenu\n");
+    
+
     }
 }
     if (*kUp & HidNpadButton_A) {
@@ -120,7 +144,17 @@ if (*kDown & HidNpadButton_A) {
             printf("Navigation vers la page MAP\n");
         } else if(gameState->currentPage == PAGE_INTERROGROS) {
             playButtonSound();
-            gameState->currentPage = PAGE_EXOLICATION;
+            gameState->currentPage = PAGE_CROIXEXPL;
+            printf("Navigation vers la page MAP\n");
+
+        }else if(gameState->currentPage == PAGE_CROIXEXPLGROS) {
+            playButtonSound();
+            gameState->currentPage = PAGE_INTERRO;
+            printf("Navigation vers la page MAP\n");
+
+        }else if(gameState->currentPage == PAGE_JOUEREXPLGROS) {
+            playButtonSound();
+            gameState->currentPage = PAGE_PLTO1;
             printf("Navigation vers la page MAP\n");
 
         }
@@ -139,6 +173,11 @@ if (*kDown & HidNpadButton_A) {
             gameState->currentPage = PAGE_CONTENU;
             printf("Retour à la page d'accueil\n");
         } else if(gameState->currentPage == PAGE_PLTO1) {
+            gameState->currentPage = PAGE_ACCUEIL;
+            printf("Retour à la page d'accueil\n");
+
+
+        }else if(gameState->currentPage == PAGE_PLTO2) {
             gameState->currentPage = PAGE_ACCUEIL;
             printf("Retour à la page d'accueil\n");
 
