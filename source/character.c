@@ -88,7 +88,7 @@ void renderCharacter(GameState* gameState, Character* character) {
 }
 void choisirMap(GameState* gameState, Character* character){
      
-    if(gameState->currentPage == PAGE_PLTO1 && character->y < 10 ){
+    if(gameState->currentPage == PAGE_PLTO1 && character->y < 0 ){
         gameState->currentPage = PAGE_PLTO2;
         character->y = 670;
         
