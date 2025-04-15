@@ -18,13 +18,15 @@ void processInput(PadState* pad, GameState* gameState, u64* kDown, u64* kUp) {
     // À mettre en haut de ton fichier ou dans une structure globale
 static int stickWasRight = 0;
 static int stickWasLeft = 0;
+static int stickWasUp = 0;
+static int stickWasDown = 0;
 
     // Mise à jour de l'état du pad
     padUpdate(pad);
     *kDown = padGetButtonsDown(pad);
     *kUp = padGetButtonsUp(pad);
     HidAnalogStickState analog_stick_2 = padGetStickPos(pad, 0);
-    const int deadzone2 = 4000;
+    const int deadzone2 = 8000;
     // Traitement des événements SDL
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
@@ -58,9 +60,29 @@ if (!stickWasLeft && (analog_stick_2.x < -deadzone2 || *kDown & HidNpadButton_Le
     }
 }
 
+
+if (!stickWasUp && (analog_stick_2.y > deadzone2 || *kDown & HidNpadButton_Up )) {
+    if (gameState->currentPage == PAGE_ACCUEIL) {
+        gameState->currentPage = PAGE_VOLUME;
+    } 
+}
+
+
+
+
+if(!stickWasDown && (analog_stick_2.y < -deadzone2 || *kDown & HidNpadButton_Down )) {
+
+    if (gameState->currentPage == PAGE_VOLUME || gameState->currentPage == PAGE_CONTENU  || gameState->currentPage == PAGE_INTERRO ) {
+        gameState->currentPage = PAGE_ACCUEIL;
+    } 
+
+
+}
 // Mettre à jour les états
 stickWasRight = (analog_stick_2.x > deadzone2);
 stickWasLeft  = (analog_stick_2.x < -deadzone2);
+stickWasUp = (analog_stick_2.y > deadzone2);
+stickWasDown = (analog_stick_2.y < -deadzone2);
 
 
 if (*kDown & HidNpadButton_A) {
