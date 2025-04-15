@@ -64,8 +64,11 @@ void updateCharacter(GameState* gameState, Character* character, PadState* pad) 
     // Limiter le personnage à l'écran
     if (character->x < 0) character->x = 0;
     if (character->x > SCREEN_W - character->width) character->x = SCREEN_W - character->width;
-    if (character->y < 0) character->y = 0;
-    if (character->y > SCREEN_H - character->height) character->y = SCREEN_H - character->height;
+    if( gameState->currentPage == PAGE_PLTO1){
+          if (character->y > SCREEN_H - character->height){
+                character->y = SCREEN_H - character->height;
+    }
+    }
 }
 
 void renderCharacter(GameState* gameState, Character* character) {
@@ -90,10 +93,13 @@ void choisirMap(GameState* gameState, Character* character){
      
     if(gameState->currentPage == PAGE_PLTO1 && character->y < 0 ){
         gameState->currentPage = PAGE_PLTO2;
-        character->y = 670;
+        character->y = 720;
         
-    }
+    }else if(gameState->currentPage == PAGE_PLTO2 && character->y > 720 ){
+        gameState->currentPage = PAGE_PLTO1;
+        character->y = 0;
 
+}
 }
 
 void cleanupCharacter(Character* character) {

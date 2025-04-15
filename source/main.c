@@ -75,7 +75,7 @@ int main(int argc, char** argv) {
         SDL_RenderPresent(gameState.renderer);
         
         // Limiter le frame rate
-        SDL_Delay(16); // ~60 FPS
+        SDL_Delay(8); // ~60 FPS
     }
     
 cleanup:
