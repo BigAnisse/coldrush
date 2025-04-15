@@ -7,7 +7,7 @@
 
 // Fonctions d'initialisation et de gestion des entrées
 void initializeInput(PadState* pad);
-void processInput(PadState* pad, GameState* gameState, u64* kDown);
+void processInput(PadState* pad, GameState* gameState, u64* kDown, u64* kUp);
 void cleanupInput(SDL_Joystick* joystick);
 
 #endif // INPUT_H

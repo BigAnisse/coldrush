@@ -20,6 +20,7 @@ int main(int argc, char** argv) {
     // État du pad
     PadState pad;
     u64 kDown;
+    u64 kUp;
     
     // Création du personnage
     Character character = {0};
@@ -54,7 +55,7 @@ int main(int argc, char** argv) {
     while (gameState.running && appletMainLoop()) {
         
         // Traiter les entrées
-        processInput(&pad, &gameState, &kDown);
+        processInput(&pad, &gameState, &kDown, &kUp);
         
         // Mettre à jour les vibrations
         updateVibration();

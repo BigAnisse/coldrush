@@ -34,7 +34,15 @@ int initializeGraphics(GameState* gameState) {
         "data/acceuil.png",  // Image d'accueil (page 0)
         "data/acceuil2.png",      // Image de contenu (page 1)
         "data/explication.png",
-        "data/plto1.png"
+        "data/plto1.png",
+        "data/interro.png",
+        "data/volume.png",
+         "data/acceuilgros.png",
+         "data/homegros.png",
+         "data/interrogros.png"
+
+
+
 
     };
     

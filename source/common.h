@@ -28,7 +28,13 @@
 #define PAGE_CONTENU 1
 #define PAGE_EXOLICATION 2
 #define PAGE_PLTO1 3
-#define MAX_IMAGES 4
+#define MAX_IMAGES 9
+#define PAGE_INTERRO 4
+#define PAGE_VOLUME 5
+#define PAGE_ACCEUILGROS 6
+#define PAGE_CONTENUGROS 7
+#define PAGE_INTERROGROS 8
+
 
 // Constantes pour la vibration
 #define VIBRATION_DURATION 5 // Durée de la vibration en frames (5 frames ~ 83ms à 60fps)
