@@ -2,6 +2,7 @@
 #include "audio.h"
 #include "vibration.h"
 
+
 void initializeInput(PadState* pad) {
     // Configure our supported input layout: a single player with standard controller styles
     padConfigureInput(1, HidNpadStyleSet_NpadStandard);
@@ -17,7 +18,8 @@ void processInput(PadState* pad, GameState* gameState, u64* kDown) {
     // Mise à jour de l'état du pad
     padUpdate(pad);
     *kDown = padGetButtonsDown(pad);
-    
+    HidAnalogStickState analog_stick_2 = padGetStickPos(pad, 0);
+    const int deadzone2 = 4000;
     // Traitement des événements SDL
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
@@ -26,6 +28,13 @@ void processInput(PadState* pad, GameState* gameState, u64* kDown) {
         }
     }
     
+    if( analog_stick_2.x > deadzone2 &&gameState->currentPage == PAGE_ACCUEIL ){
+
+        gameState->currentPage = PAGE_CONTENU;
+
+    }
+
+
     if (*kDown & HidNpadButton_A) {
         activateVibration(pad);
     
@@ -35,8 +44,13 @@ void processInput(PadState* pad, GameState* gameState, u64* kDown) {
             printf("Navigation vers la page de contenu\n");
         } else if (gameState->currentPage == PAGE_CONTENU) {
             playButtonSound();
-            gameState->currentPage = PAGE_MAP;
+            gameState->currentPage = PAGE_EXOLICATION;
             printf("Navigation vers la page MAP\n");
+        } else if(gameState->currentPage == PAGE_EXOLICATION) {
+            playButtonSound();
+            gameState->currentPage = PAGE_PLTO1;
+            printf("Navigation vers la page MAP\n");
+
         }
     }
     
@@ -48,10 +62,15 @@ void processInput(PadState* pad, GameState* gameState, u64* kDown) {
         if (gameState->currentPage == PAGE_CONTENU) {
             gameState->currentPage = PAGE_ACCUEIL;
             printf("Retour à la page d'accueil\n");
-        } else if(gameState->currentPage == PAGE_MAP) {
+        } else if(gameState->currentPage == PAGE_EXOLICATION) {
             
             gameState->currentPage = PAGE_CONTENU;
             printf("Retour à la page d'accueil\n");
+        } else if(gameState->currentPage == PAGE_PLTO1) {
+            gameState->currentPage = PAGE_EXOLICATION;
+            printf("Retour à la page d'accueil\n");
+
+
         }
     }
     

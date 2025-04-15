@@ -1,83 +1,61 @@
 #ifndef COMMON_H
 #define COMMON_H
-
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_render.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <switch.h>
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_mixer.h>
+// Définition des constantes pour les boutons
+#define JOY_A     0
+#define JOY_B     1
+#define JOY_X     2
+#define JOY_Y     3
+#define JOY_PLUS  10
+#define JOY_MINUS 11
+#define JOY_LEFT  12
+#define JOY_UP    13
+#define JOY_RIGHT 14
+#define JOY_DOWN  15
 
-// Constantes pour l'écran
+// Constantes d'écran
 #define SCREEN_W 1280
 #define SCREEN_H 720
 
-// Pages
-#define PAGE_ACCUEIL 1
-#define PAGE_CONTENU 0
-#define PAGE_MAP 3
-
-// Constantes pour la vibration
-#define VIBRATION_DURATION 12  // ~200ms à 60 FPS
-
-// Constantes pour l'audio
-#define SFX_CHANNEL 1  // Canal dédié pour les effets sonores
-
-// Maximum d'images à charger
+// Identifiants des pages
+#define PAGE_ACCUEIL 0
+#define PAGE_CONTENU 1
+#define PAGE_EXOLICATION 2
+#define PAGE_PLTO1 3
 #define MAX_IMAGES 4
 
-// Constantes pour l'animation
-#define ANIMATION_FRAMES 25       // Nombre d'images par animation
-#define ANIMATION_FRAMESGLA 50
-#define ANIMATION_SPEED 8        // Vitesse de l'animation (plus petit = plus rapide)
+// Constantes pour la vibration
+#define VIBRATION_DURATION 5 // Durée de la vibration en frames (5 frames ~ 83ms à 60fps)
 
-// Constantes pour les directions
-#define DIR_DOWN  0
-#define DIR_LEFT  1
-#define DIR_RIGHT 2
-#define DIR_UP    3
+// Canal audio pour les effets sonores
+#define SFX_CHANNEL 1
 
-// Structure pour un obstacle
+// Structure de jeu globale pour partager l'état entre les modules
 typedef struct {
-    int x;
-    int y;
-    int width;
-    int height;
-} Obstacle;
-
-// Prédéfinition des structures pour éviter les dépendances circulaires
-typedef struct Character Character;
-typedef struct CollisionMap CollisionMap;
-typedef struct GameState GameState;
-
-// Structure pour représenter le personnage
-struct Character {
-    float x;                         // Position X
-    float y;                         // Position Y
-    float speed;                     // Vitesse de déplacement
-    int width;                       // Largeur
-    int height;                      // Hauteur
-    int direction;                   // Direction actuelle
-    int frame;                       // Frame d'animation actuelle
-    int frameCounter;                // Compteur pour gérer la vitesse d'animation
-    SDL_Texture* textures[4][ANIMATION_FRAMES]; // Textures pour chaque direction et frame
-    SDL_Texture* texturesGlac[2][ANIMATION_FRAMESGLA];
-};
-
-// Structure pour une carte avec collisions
-struct CollisionMap {
-    int width;                       // Largeur de la carte en tuiles
-    int height;                      // Hauteur de la carte en tuiles
-    int tileSize;                    // Taille d'une tuile en pixels
-    Obstacle* obstacles;             // Tableau des obstacles
-    int obstacleCount;               // Nombre d'obstacles
-};
-
-// Structure principale pour l'état du jeu
-struct GameState {
     SDL_Window* window;
     SDL_Renderer* renderer;
-    SDL_Joystick* joystick;
     SDL_Texture* textures[MAX_IMAGES];
+    SDL_Joystick* joystick;
     int currentPage;
     int running;
-};
+} GameState;
+// Ajouter à common.h après la déclaration de GameState
+
+
+// Structure pour représenter le personnage
+typedef struct {
+    float x;                // Position X
+    float y;                // Position Y
+    float speed;            // Vitesse de déplacement
+    int width;              // Largeur
+    int height;             // Hauteur
+    SDL_Texture* texture;   // Texture du personnage
+} Character;
 
 #endif // COMMON_H

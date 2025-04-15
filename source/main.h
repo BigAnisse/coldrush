@@ -16,7 +16,6 @@
 #include "vibration.h"
 #include "character.h" // Nouvel include
 
- 
 // Fonction principale
 int main(int argc, char** argv);
 

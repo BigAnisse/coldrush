@@ -31,10 +31,11 @@ int initializeGraphics(GameState* gameState) {
     
     // Tableau des chemins d'images
     const char* imagePaths[MAX_IMAGES] = {
-        "data/PLTO-INTERFACE-02.png",
-        "data/PLTO-INTERFACE-01.png",  // Image d'accueil (page 0)
-        "data/PLTO-INTERFACE-03.png",      // Image de contenu (page 1)
-        "data/map.png"
+        "data/acceuil.png",  // Image d'accueil (page 0)
+        "data/acceuil2.png",      // Image de contenu (page 1)
+        "data/explication.png",
+        "data/plto1.png"
+
     };
     
     // Charger les textures

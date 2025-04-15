@@ -52,7 +52,8 @@ audio.o: C:/coldrushswitch/source/audio.c \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_timer.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_locale.h \
  C:/devkitPro/portlibs/switch/include/SDL2/SDL_misc.h \
- C:/devkitPro/portlibs/switch/include/SDL2/SDL_render.h
+ C:/devkitPro/portlibs/switch/include/SDL2/SDL_image.h \
+ C:/devkitPro/portlibs/switch/include/SDL2/SDL.h
 C:/coldrushswitch/source/audio.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_mixer.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_stdinc.h:
@@ -106,4 +107,5 @@ C:/devkitPro/portlibs/switch/include/SDL2/SDL_system.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_timer.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_locale.h:
 C:/devkitPro/portlibs/switch/include/SDL2/SDL_misc.h:
-C:/devkitPro/portlibs/switch/include/SDL2/SDL_render.h:
+C:/devkitPro/portlibs/switch/include/SDL2/SDL_image.h:
+C:/devkitPro/portlibs/switch/include/SDL2/SDL.h:
