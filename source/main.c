@@ -12,6 +12,8 @@ int main(int argc, char** argv) {
     gameState.joystick = NULL;
     gameState.currentPage = PAGE_ACCUEIL;
     gameState.running = 1;
+
+    
     
     for (int i = 0; i < MAX_IMAGES; i++) {
         gameState.textures[i] = NULL;
@@ -21,6 +23,12 @@ int main(int argc, char** argv) {
     PadState pad;
     u64 kDown;
     u64 kUp;
+    u64 kHeld;
+
+ 
+
+
+
     
     // Création du personnage
     Character character = {0};
@@ -61,7 +69,7 @@ int main(int argc, char** argv) {
         updateVibration();
         
         // Mettre à jour le personnage
-        updateCharacter(&gameState, &character, &pad);
+        updateCharacter(&gameState, &character, &pad, &kHeld);
         
         // Afficher le contenu
         renderFrame(&gameState);
@@ -75,8 +83,8 @@ int main(int argc, char** argv) {
         SDL_RenderPresent(gameState.renderer);
         
         // Limiter le frame rate
-        SDL_Delay(8); // ~60 FPS
-    }
+        SDL_Delay(3); // ~60 FPS
+    } 
     
 cleanup:
     // Arrêter la vibration avant de quitter

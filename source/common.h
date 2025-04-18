@@ -28,7 +28,7 @@
 #define PAGE_CONTENU 1
 #define PAGE_EXOLICATION 2
 #define PAGE_PLTO1 3
-#define MAX_IMAGES 14
+#define MAX_IMAGES 20
 #define PAGE_INTERRO 4
 #define PAGE_VOLUME 5
 #define PAGE_ACCEUILGROS 6
@@ -39,7 +39,13 @@
 #define PAGE_CROIXEXPLGROS 11
 #define PAGE_JOUEREXPLGROS 12
 #define PAGE_PLTO2 13
-
+#define PAGE_PLTO3 14
+#define PAGE_PLTO4 15
+#define PAGE_PLTO5 16
+#define PAGE_PLTO6 17
+#define PAGE_PLTO7 18
+#define PAGE_PLTO8 19
+#define NBFRAME 25
 
 
 // Constantes pour la vibration
@@ -60,14 +66,18 @@ typedef struct {
 // Ajouter à common.h après la déclaration de GameState
 
 
-// Structure pour représenter le personnage
-typedef struct {
-    float x;                // Position X
-    float y;                // Position Y
-    float speed;            // Vitesse de déplacement
-    int width;              // Largeur
-    int height;             // Hauteur
-    SDL_Texture* texture;   // Texture du personnage
-} Character;
 
+typedef struct {
+    float x, y;          // Position
+    float speed;         // Vitesse
+    int width, height;   // Dimensions
+    SDL_Texture* texture; // Texture courante
+    
+    // Variables pour l'animation
+    SDL_Texture* textures[NBFRAME]; // Tableau de textures
+    int currentFrame;    // Frame actuelle
+    int frameCount;      // Compteur pour la vitesse d'animation
+    int animationSpeed;  // Contrôle de la vitesse d'animation
+    int isAnimating;     // Indicateur d'animation active
+} Character;
 #endif // COMMON_H

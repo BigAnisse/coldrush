@@ -7,6 +7,7 @@ int initializeGraphics(GameState* gameState) {
         return 0;
     }
     
+    
     if (IMG_Init(IMG_INIT_PNG) != IMG_INIT_PNG) {
         printf("Erreur d'initialisation SDL_image: %s\n", IMG_GetError());
         return 0;
@@ -44,13 +45,17 @@ int initializeGraphics(GameState* gameState) {
          "data/jouerexplication.png",
          "data/croixexplicationgros.png",
          "data/jouerexplicationgros.png",
-         "data/plto2.png"
+         "data/plto2.png",
+         "data/plto3.png",
+         "data/plto4.png",
+         "data/plto5.png",
+         "data/plto6.png",
+         "data/plto7.png",
+         "data/plto8.png"
+         
 
          
-         
-
-
-
+        
 
     };
     

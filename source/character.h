@@ -6,7 +6,7 @@
 
 // Fonctions de gestion du personnage
 int initializeCharacter(GameState* gameState, Character* character);
-void updateCharacter(GameState* gameState, Character* character, PadState* pad);
+void updateCharacter(GameState* gameState, Character* character, PadState* pad, u64* kHeld);
 void renderCharacter(GameState* gameState, Character* character);
 void choisirMap(GameState* gameState, Character* character);
 void cleanupCharacter(Character* character);
