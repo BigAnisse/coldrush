@@ -50,7 +50,7 @@ int initializeCharacter(GameState* gameState, Character* character) {
 
 void updateCharacter(GameState* gameState, Character* character, PadState* pad, u64* kHeld) {
     // Cette fonction ne s'exécute que sur les pages MAP (page 2)
-    if (gameState->currentPage != PAGE_PLTO1 && gameState->currentPage != PAGE_PLTO2) {
+    if (gameState->currentPage != PAGE_PLTO1 && gameState->currentPage != PAGE_PLTO2 && gameState->currentPage != PAGE_PLTO3 && gameState->currentPage != PAGE_PLTO4 && gameState->currentPage != PAGE_PLTO5 && gameState->currentPage != PAGE_PLTO6 && gameState->currentPage != PAGE_PLTO7) {
         return;
     }
     
@@ -136,7 +136,11 @@ void updateCharacter(GameState* gameState, Character* character, PadState* pad, 
                 character->texture = character->textures[character->currentFrame];
             }
         }
-    } else {
+    } 
+        
+        
+        
+        else {
         // Si on ne bouge pas horizontalement, revenir à l'image par défaut
         character->isAnimating = 0;
         character->currentFrame = 0;
@@ -166,7 +170,7 @@ void updateCharacter(GameState* gameState, Character* character, PadState* pad, 
 
 void renderCharacter(GameState* gameState, Character* character) {
     // Afficher le personnage uniquement sur la page MAP
-    if (gameState->currentPage != PAGE_PLTO1 && gameState->currentPage != PAGE_PLTO2) {
+    if (gameState->currentPage != PAGE_PLTO1 && gameState->currentPage != PAGE_PLTO2 && gameState->currentPage != PAGE_PLTO3 && gameState->currentPage != PAGE_PLTO4 && gameState->currentPage != PAGE_PLTO5 && gameState->currentPage != PAGE_PLTO6 && gameState->currentPage != PAGE_PLTO7) {
         return;
     }
     

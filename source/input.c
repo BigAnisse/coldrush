@@ -74,8 +74,6 @@ if (!stickWasUp && (analog_stick_2.y > deadzone2 || *kDown & HidNpadButton_Up ))
 }
 
 
-
-
 if(!stickWasDown && (analog_stick_2.y < -deadzone2 || *kDown & HidNpadButton_Down )) {
 
     if (gameState->currentPage == PAGE_VOLUME || gameState->currentPage == PAGE_CONTENU  || gameState->currentPage == PAGE_INTERRO ) {
